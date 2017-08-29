@@ -11,13 +11,13 @@ html {
 #test,
 #info {
   background-color: rgba(255,255,255,0.95);
-  left: 1vw;
-  margin-bottom: 1vh;
-  min-height: 98vh;
-  padding: 3rem 2rem 2rem;
+  left: 5vw;
+  margin-bottom: 5vh;
+  min-height: 90vh;
+  padding: 4rem 2rem 2rem;
   position: absolute;
-  right: 1vw;
-  top: 1vh;
+  right: 5vw;
+  top: 5vh;
 }
 #test>button,
 #info {
@@ -25,18 +25,38 @@ html {
 }
 #test>button,
 #info>button {
-  background-color: red;
+  background-color: grey;
   border: none;
   border-radius: 999px;
-  height: 2rem;
-  left: 0.5rem;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  right: 1rem;
+  outline: none;
   position: absolute;
-  top: 0.5rem;
-  width: 2rem;
+  top: 1rem;
+  width: 40px;
+  z-index: 100;
+}
+#test>button:hover,
+#info>button:hover {
+  background-color: white;
+  border: 1px solid grey;
+  color: grey;
 }
 #test>button::before,
 #info>button::before {
   content: 'X';
-  color: white;
   font-size: 150%;
+}
+#mocha-stats {
+  position: absolute !important;
+  top: 1rem !important;
+  left: 0.6rem !important;
+}
+#mocha-stats li {
+  vertical-align: top !important;
+}
+#mocha-stats .progress {
+  float: none !important;
 }
