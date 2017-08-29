@@ -1,3 +1,42 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
 html {
-  background-color: pink;
+  background-color: lavenderblush;
+}
+
+#test,
+#info {
+  background-color: rgba(255,255,255,0.95);
+  left: 1vw;
+  margin-bottom: 1vh;
+  min-height: 98vh;
+  padding: 3rem 2rem 2rem;
+  position: absolute;
+  right: 1vw;
+  top: 1vh;
+}
+#test>button,
+#info {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+}
+#test>button,
+#info>button {
+  background-color: red;
+  border: none;
+  border-radius: 999px;
+  height: 2rem;
+  left: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  width: 2rem;
+}
+#test>button::before,
+#info>button::before {
+  content: 'X';
+  color: white;
+  font-size: 150%;
 }
