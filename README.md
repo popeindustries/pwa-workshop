@@ -1,4 +1,4 @@
-# PWA-mazing
+# PWA-mazing!
 
 A N-step program for transforming a totally boring web page into a totally amazing *Progressive Web App*!
 
