@@ -24,7 +24,7 @@ $ cd pwa-workshop && npm install
 $ npm start
 ```
 
-...then open `http://localhost:3030/` in Firefox or Chrome.
+...then open `http://localhost:3000/` in Firefox or Chrome.
 
 ## The program
 
