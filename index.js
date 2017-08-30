@@ -1,7 +1,7 @@
 'use strict';
 
 const { watch } = require('chokidar');
-const { start, restart, refresh, stop } = require('buddy-server');
+const { start, restart, refresh } = require('buddy-server');
 
 const PORT = 3333;
 
