@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "author": "Alexander Pope <alex@pope-industries.com>",
   "dependencies": {
+    "buddy-server": "4.0.0-beta-1",
     "chai": "^4.1.1",
+    "chokidar": "^1.7.0",
     "github-markdown-css": "^2.8.0",
     "koa": "^2.3.0",
     "koa-route": "^3.2.0",
@@ -13,30 +15,14 @@
     "superagent": "^3.6.0",
     "sw-test-env": "^1.1.2"
   },
-  "devDependencies": {
-    "buddy": "^6.14.2",
-    "buddy-server": "^3.1.0"
-  },
+  "devDependencies": {},
   "repository": "https://github.com/popeindustries/pwa-workshop.git",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node lib/index.js",
-    "watch": "buddy --serve --reload watch"
+    "start": "node index.js"
   },
   "engines": {
     "node": ">=8"
-  },
-  "buddy": {
-    "build": [
-      {
-        "input": "lib/**/*.{css,js}",
-        "bundle": false
-      }
-    ],
-    "server": {
-      "file": "lib/index.js",
-      "port": "3000"
-    }
   }
 }
