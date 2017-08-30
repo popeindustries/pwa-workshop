@@ -26,12 +26,12 @@ start(
     if (err) {
       throw err;
     }
-    console.log(`Welcome to the PWA-mazing workshop \\o/\n\n  point your browser at: http://localhost:${PORT}`);
+    console.log(`Welcome to the PWA-mazing workshop \\o/\n\n  point your browser at: http://localhost:${PORT}\n`);
   }
 );
 
 function onUpdate(path) {
-  console.log('  changed:', path);
+  console.log('   + changed:', path);
 
   restart(err => {
     if (err) {
