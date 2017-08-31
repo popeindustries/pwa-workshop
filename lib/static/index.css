@@ -53,16 +53,16 @@ html {
   font-weight: 100;
 }
 #mocha {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 #mocha-stats {
-  position: absolute !important;
-  top: 1rem !important;
-  left: 0.6rem !important;
+  position: absolute;
+  top: 1rem;
+  left: 0.6rem;
 }
 #mocha-stats li {
-  vertical-align: top !important;
+  vertical-align: top;
 }
 #mocha-stats .progress {
-  float: none !important;
+  float: none;
 }
