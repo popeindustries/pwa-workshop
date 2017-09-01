@@ -1,0 +1,14 @@
+Step 1: SW registration
+  - SW intro
+  - SW Registration basics
+  1. register empty SW
+
+Step 2: SW installation
+  - SW install basics
+  - Cache api
+  1. pre-cache assets
+
+Step 3: SW activation
+  - SW activate basics
+  - Cache update
+  1. update cache
