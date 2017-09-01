@@ -10,13 +10,14 @@
     "github-markdown-css": "^2.8.0",
     "koa": "^2.3.0",
     "koa-route": "^3.2.0",
-    "koa-send": "^4.1.0",
     "markdown-it": "^8.4.0",
     "mocha": "^3.5.0",
     "superagent": "^3.6.0",
     "sw-test-env": "^1.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "debug": "^3.0.1"
+  },
   "repository": "https://github.com/popeindustries/pwa-workshop.git",
   "license": "MIT",
   "main": "index.js",

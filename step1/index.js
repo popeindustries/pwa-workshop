@@ -2,5 +2,5 @@
 
 if ('serviceWorker' in navigator) {
   console.log('registering')
-  // navigator.serviceWorker.register('/step1/sw.js');
+  navigator.serviceWorker.register('sw.js');
 }
