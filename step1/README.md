@@ -12,13 +12,17 @@ Adding a `ServiceWorker` is the key to turning a flakey, boring web experience i
 > - [Using Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 > - [Service Worker API](https://developer.mozilla.org/en/docs/Web/API/Service_Worker_API)
 
-## Challenge
+---
+
+<h4 align=center><strong>CHALLENGE</strong></h4>
 
 In this first step, your task is to:
 
-<p style="text-align:center;background-color:#e8e8e8;padding:1em"><strong>Register an empty <code>ServiceWorker</code> after the page loads</strong></p>
+1. **Register an empty `ServiceWorker` after the page loads**
 
-Edit the `index.js` file with your registration code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
+Edit the `step1/index.js` file with your registration code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
+
+---
 
 ## `ServiceWorker` registration
 
