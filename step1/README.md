@@ -20,14 +20,12 @@ Sometimes it may be desireable to restrict the scope of control by specifying a 
 
 Finally, repeated calls to `navigator.serviceWorker.register` will be treated as a no-op if the `ServiceWorker` at `scriptURL` + `options.scope` has already been registered.
 
-[More on registration](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration)
-
 ---
 ---
 
 In this first step, your task is to:
 
-1. **Register an empty `ServiceWorker` after the page loads**
+1. **Register an empty `ServiceWorker`**
 
 Edit the `step1/index.js` file with your registration code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 
