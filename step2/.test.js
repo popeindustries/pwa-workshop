@@ -1,12 +1,9 @@
 const { expect } = window.chai;
 
 describe('Step 2 - Registration', () => {
-  before(async () => {
-    if (await window.shouldClean()) {
-      await window.clean();
-      window.location.reload();
-      throw Error('reloading');
-    }
+  before(window.prepareForTesting);
+  beforeEach(async () => {
+    await window.load('index.js');
   });
 
   it('should not register an empty ServiceWorker if no "ready" event has fired', async () => {

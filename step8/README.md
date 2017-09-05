@@ -11,7 +11,7 @@ In this step, your task is to:
 
 1. **verify that resources have not expired before returning a cached response**
 
-Edit the `step8/sw.js` file with your installation code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
+Edit the `step8/sw.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 
 ---
 ---

@@ -2,7 +2,7 @@ const { expect } = window.chai;
 const navigator = window.navigator;
 
 describe('Step 1 - Registration', () => {
-  before(window.beforeTest);
+  before(window.prepareForTesting);
   beforeEach(() => {
     delete window.navigator;
   });

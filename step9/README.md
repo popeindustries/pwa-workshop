@@ -11,7 +11,7 @@ In this step, your task is to:
 
 1. **track network status and notify clients**
 
-Edit the `step9/sw.js` file with your installation code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
+Edit the `step9/sw.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 
 ---
 ---
