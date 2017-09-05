@@ -4,7 +4,7 @@ A `ServiceWorker` is software that is *installed* on a user's device, and as a r
 
 Regardless of how often the browser checks, in all cases the browser will only re-install a `ServiceWorker` if it is *byte* different from the previous version. In practice, this means it's necessary to use an invalidation mechanism that will change the contents of the file with each new release. This can be as simple as updating a string value in the file.
 
-In the future, browsers will extend this byte-level check to files imported via [`importScripts`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts), but until then, you can treat the `ServiceWorker` file as simple a boot loader by using `importScripts` with versioned file names.
+In the future, browsers will extend this byte-level check to files imported via [`importScripts`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts), but until then, you can treat the `ServiceWorker` file as a simple boot loader by using `importScripts` with versioned file names.
 
 ---
 ---
