@@ -2,13 +2,7 @@ const { expect } = window.chai;
 const navigator = window.navigator;
 
 describe('Step 1 - Registration', () => {
-  before(async () => {
-    if (await window.shouldClean()) {
-      await window.clean();
-      window.location.reload();
-      throw Error('reloading');
-    }
-  });
+  before(window.beforeTest);
   beforeEach(() => {
     delete window.navigator;
   });
