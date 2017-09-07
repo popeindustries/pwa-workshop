@@ -25,7 +25,7 @@ self.addEventListener('activate', event => {
 
 In this step, your task is to:
 
-1. **add an `activate` handler and remove the 'step5-old' cache**
+- **add an `activate` handler and remove the 'step5-old' cache**
 
 Edit the `step5/sw-index-v1.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 

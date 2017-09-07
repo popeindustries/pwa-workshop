@@ -7,5 +7,10 @@ const ID = 'step3';
 const ASSETS = ['index.css', 'index.js'];
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(ID).then(cache => cache.addAll(ASSETS)));
+  event.waitUntil(insallation());
 });
+
+async function insallation() {
+  const cache = await caches.open(ID);
+  return cache.addAll(ASSETS);
+}

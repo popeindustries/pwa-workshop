@@ -8,14 +8,18 @@ const ID = 'step5';
 const ASSETS = ['index.css', 'index.js'];
 
 self.addEventListener('install', event => {
-  event.waitUntil(insallation());
+  event.waitUntil(installation());
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil(activation());
 });
 
-async function insallation() {
+self.addEventListener('fetch', event => {
+  event.respondWith(respond(event.request));
+});
+
+async function installation() {
   const cache = await caches.open(ID);
   return cache.addAll(ASSETS);
 }
@@ -30,4 +34,17 @@ async function activation() {
       }
     })
   );
+}
+
+async function respond(request) {
+  let response = await caches.match(request);
+
+  if (!response) {
+    const cache = await caches.open(ID);
+
+    response = await fetch(request);
+    cache.put(request, response);
+  }
+  console.log(request.url, response.bodyUsed)
+  return response.clone();
 }

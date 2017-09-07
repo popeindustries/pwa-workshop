@@ -34,7 +34,7 @@ It's important to note that, if the Promise returned to `event.waitUntil()` reje
 
 In this step, your task is to:
 
-1. **pre-cache `index.{css,js}` assets on install**
+- **pre-cache `index.{css,js}` assets on install**
 
 Edit the `step3/sw.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 

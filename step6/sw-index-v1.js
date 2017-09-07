@@ -4,26 +4,31 @@
  * Press the 'I' key to get more information on the current challenge.
  */
 
-const ID = 'step6';
+const ID = 'step5';
 const ASSETS = ['index.css', 'index.js'];
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(ID).then(cache => cache.addAll(ASSETS)));
+  event.waitUntil(installation());
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(clearOldCaches());
+  event.waitUntil(activation());
 });
 
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
-  if (url.origin == location.origin) {
-    event.respondWith(getCached(url));
+  if (/index\.[jc]ss?$/.test(url.pathname)) {
+    event.respondWith(caches.match(event.request));
   }
 });
 
-async function clearOldCaches() {
+async function installation() {
+  const cache = await caches.open(ID);
+  return cache.addAll(ASSETS);
+}
+
+async function activation() {
   const keys = await caches.keys();
 
   await Promise.all(
@@ -33,14 +38,4 @@ async function clearOldCaches() {
       }
     })
   );
-}
-
-async function getCached(url) {
-  const response = await caches.match(url.pathname.slice(1));
-
-  if (response) {
-    return response;
-  } else {
-    return fetch(url.href);
-  }
 }

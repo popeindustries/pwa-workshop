@@ -1,17 +1,17 @@
-# Step 9
+# Step 8
 
-Like all workers, `ServiceWorkers` can only indirectly send and receive messages from connected clients via the [Channel Messaging API](https://developer.mozilla.org/developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API). Though cumbersome to work with, Channel Messaging enables a `ServiceWorker` to receive messages from an individual client, to send messages to individual clients, or to broadcast messages to all clients.
+The `Cache` API is a low-level API covering the storage and retrieval of `request`/`response` pairs. There are no mechanisms for limiting the total number of cached items, for example, or the purging of stale resources.
 
-One useful scenario for messaging is for a `ServiceWorker` to broadcast online/offline status. Although the `navigator.onLine` property will correctly indicate when there is no network connection (value is `false`), it will not cover situations where the network or remote servers are unreachable (no internet, "li-fi", etc.). When performing a `fetch` request, for example, the `ServiceWorker` could notify clients if successful/unsuccessful. Note that `fetch` requests do not reject on server errors, only permission or network errors.
+In general, it's good practice to always use unique (versioned) file paths for static resources, but some resources will inevitably require invalidation. JSON API data, for example, is often time dependant, requiring that you verify it's staleness before returning a cached `response`.
 
 ---
 ---
 
 In this step, your task is to:
 
-1. **track network status and notify clients**
+1. **verify that resources have not expired before returning a cached response**
 
-Edit the `step9/sw.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
+Edit the `step8/sw.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 
 ---
 ---

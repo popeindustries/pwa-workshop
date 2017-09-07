@@ -7,14 +7,13 @@ describe('Step 6 - Fetching', () => {
     await window.triggerReady();
   });
 
-  it('should return a pre-cached response', async () => {
-    const { active } = await window.getRegistrationAtState('activated');
-    const cache = await window.caches.keys().then(keys => window.caches.open(keys[0]));
+  it('should return a cached response', async () => {
+    await window.getRegistrationAtState('activated');
 
-    cache.put(new Request(`step6/foo.js`), new Response('', { status: 200 }));
+    const start = Date.now();
+    const response = await fetch('index.js');
 
-    const response = await fetch('foo.js');
-
-    expect(response).to.have.length.property('status', 200);
+    expect(response).to.have.property('status', 200);
+    expect(Date.now() - start).to.be.within(0, 10);
   });
 });
