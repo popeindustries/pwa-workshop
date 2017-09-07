@@ -4,7 +4,7 @@
  * Press the 'I' key to get more information on the current challenge.
  */
 
-const ID = 'step5';
+const ID = 'step7';
 const ASSETS = ['index.css', 'index.js'];
 
 self.addEventListener('install', event => {
@@ -43,8 +43,10 @@ async function respond(request) {
     const cache = await caches.open(ID);
 
     response = await fetch(request);
-    cache.put(request, response);
+    if (response.ok) {
+      cache.put(request, response.clone());
+    }
   }
-  console.log(request.url, response.bodyUsed)
-  return response.clone();
+
+  return response;
 }

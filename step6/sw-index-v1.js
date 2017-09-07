@@ -4,7 +4,7 @@
  * Press the 'I' key to get more information on the current challenge.
  */
 
-const ID = 'step5';
+const ID = 'step6';
 const ASSETS = ['index.css', 'index.js'];
 
 self.addEventListener('install', event => {
