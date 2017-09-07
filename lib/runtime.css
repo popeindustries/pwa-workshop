@@ -1,0 +1,92 @@
+#test,
+#info {
+  background-color: rgba(255,255,255,0.95);
+  box-shadow: 0 5px 15px 2px rgba(0,0,0,0.1);
+  left: 50%;
+  margin: 0 auto;
+  max-width: 60rem;
+  min-height: 90vh;
+  padding: 4rem 2rem 2rem;
+  position: absolute;
+  transform: translateX(-50%);
+  top: 5vh;
+  width: 90vw;
+}
+#test>button,
+#info,
+#success {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+#test>button,
+#info>button {
+  background-color: grey;
+  border: none;
+  border-radius: 999px;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  right: 1rem;
+  outline: none;
+  position: absolute;
+  top: 1rem;
+  width: 40px;
+  z-index: 100;
+}
+#test>button:hover,
+#info>button:hover {
+  background-color: white;
+  border: 1px solid grey;
+  color: grey;
+}
+#test>button::before,
+#info>button::before {
+  content: 'X';
+  font-size: 150%;
+  font-weight: 100;
+}
+#mocha {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+#mocha-stats {
+  position: absolute;
+  top: 1rem;
+  left: 0.6rem;
+}
+#mocha-stats li {
+  vertical-align: top;
+}
+#mocha-stats .progress {
+  float: none;
+}
+#success {
+  background-color: lavenderblush;
+  border-top: 1px solid #fbc9da;
+  border-bottom: 1px solid #fbc9da;
+  opacity: 0.95;
+  padding: 1rem;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+#success a {
+  background-color: grey;
+  border-radius: 999px;
+  color: white;
+  display: inline-block;
+  font-size: 120%;
+  font-weight: 600;
+  height: 4.6rem;
+  letter-spacing: 0.1rem;
+  line-height: 4.6rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 4.6rem;
+}
+#success a:hover {
+  background-color: white;
+  color: grey;
+  border: 1px solid grey;
+}
