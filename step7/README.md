@@ -36,7 +36,7 @@ In this step, your tasks are to:
 - **implement a *Cache-first* strategy**
 - **cache all uncached network requests**
 
-Edit the `step7/sw.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
+Edit the `step7/sw-index-v1.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 
 ---
 ---
