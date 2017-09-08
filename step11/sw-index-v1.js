@@ -5,7 +5,7 @@
  */
 
 const ID = 'step11';
-const ASSETS = ['index.css', 'index.js', 'offline.html'];
+const ASSETS = ['/step11/index.css', '/step11/index.js', '/step11/offline.html'];
 
 self.addEventListener('install', event => {
   event.waitUntil(installation());

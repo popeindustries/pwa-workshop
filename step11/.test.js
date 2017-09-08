@@ -9,7 +9,7 @@ describe('Step 11 - Offline', () => {
   });
 
   it('should return a fallback page when offline', async () => {
-    const request = new Request('index.html?offline');
+    const request = new Request('/step11/index.html?offline');
     const response = await fetch(request, { headers: {
       accept: ['text/html']
     }});

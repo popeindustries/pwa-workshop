@@ -14,12 +14,12 @@ describe('Step 7 - Runtime caching', () => {
     cache.put(new Request(`/step7/bar.js`), new Response('', { status: 200 }));
     await window.sleep(50);
 
-    const response = await fetch('bar.js');
+    const response = await fetch('/step7/bar.js');
 
     expect(response).to.have.property('status', 200);
   });
   it('should cache resources returned from network', async () => {
-    const req = new Request('dummy.js');
+    const req = new Request('/step7/dummy.js');
     const response = await fetch(req);
     const responseText = await response.text();
     const response2 = await fetch(req);
@@ -34,7 +34,7 @@ describe('Step 7 - Runtime caching', () => {
     expect(response).to.not.equal(response2);
   });
   it('should not cache bad responses', async () => {
-    const req = new Request('foo.js');
+    const req = new Request('/step7/foo.js');
     const response = await fetch(req);
     const response2 = await fetch(req);
     const cached = await cache.match(req);

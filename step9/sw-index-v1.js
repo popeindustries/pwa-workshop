@@ -57,9 +57,14 @@ async function respond(request) {
 
 function hasExpired(response) {
   const cacheControl = response.headers.get('Cache-Control');
+
+  if (!cacheControl) {
+    return false;
+  }
+
   const date = response.headers.get('Date');
-  const maxAge = parseInt(/max-age=(\d+)$/.exec(cacheControl)[1], 10) * 1000;
-  const expires = +new Date(date) + maxAge;
+  const maxAge = /max-age=(\d+)$/.exec(cacheControl);
+  const expires = +new Date(date) + (maxAge && maxAge[1] ? parseInt(maxAge[1], 10) * 1000 : 0);
 
   return Date.now() > expires;
 }
