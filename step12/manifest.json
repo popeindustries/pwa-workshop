@@ -1,0 +1,16 @@
+{
+  "short_name": "PWA",
+  "name": "PWA",
+  "background_color": "white",
+  "theme_color": "white",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "minimal-ui",
+  "orientation": "portrait-primary"
+}
