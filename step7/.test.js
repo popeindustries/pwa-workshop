@@ -12,6 +12,7 @@ describe('Step 7 - Runtime caching', () => {
 
   it('should return resources from cache', async () => {
     cache.put(new Request(`/step7/bar.js`), new Response('', { status: 200 }));
+    await window.sleep(50);
 
     const response = await fetch('bar.js');
 

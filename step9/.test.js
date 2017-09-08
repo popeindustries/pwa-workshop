@@ -21,6 +21,7 @@ describe('Step 9 - Invalidation', () => {
     });
 
     cache.put(request, response);
+    await window.sleep(50);
 
     const res = await fetch(request);
 
@@ -37,6 +38,7 @@ describe('Step 9 - Invalidation', () => {
     });
 
     cache.put(request, response);
+    await window.sleep(50);
 
     const res = await fetch(request);
 
