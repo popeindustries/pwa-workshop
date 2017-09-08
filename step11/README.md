@@ -1,15 +1,17 @@
 # Step 11
 
-Returning cached resources from a `ServiceWorker` will (almost) always lead to a significant performance improvement, with the added bonus of working seamlessly with or without network access.
+Returning cached resources from a `ServiceWorker` will (almost) always lead to a significant performance improvement, with the added bonus of working seamlessly on or offline.
+
+In cases where an html request is not cached and the network is unavailable, the `ServiceWorker` can respond with a pre-cached fallback page, or even a dynamically rendered template.
 
 ---
 ---
 
 In this step, your task is to:
 
-1. **add a manifest file to the application**
+1. **return an offline page for html requests when offline**
 
-Add a `step11/manifest.json` file, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
+Edit the `step11/sw-index-v1.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 
 ---
 ---

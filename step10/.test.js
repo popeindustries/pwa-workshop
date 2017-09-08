@@ -58,7 +58,7 @@ describe('Step 10 - Messaging', () => {
     );
 
     try {
-      await fetch('/offline');
+      await fetch('dummy.js?offline');
       await window.sleep(100);
     } finally {
       expect(called).to.equal(true);

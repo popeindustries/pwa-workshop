@@ -4,8 +4,8 @@
  * Press the 'I' key to get more information on the current challenge.
  */
 
-const ID = 'step10';
-const ASSETS = ['index.css', 'index.js'];
+const ID = 'step11';
+const ASSETS = ['index.css', 'index.js', 'offline.html'];
 
 self.addEventListener('install', event => {
   event.waitUntil(installation());
@@ -49,7 +49,9 @@ async function respond(request) {
       }
       updateOnlineStatus(true);
     } catch (err) {
-      response = new Response('', { status: 499, statusText: 'network offline' });
+      response = request.mode == 'navigate' || (request.headers.get('accept').includes('text/html'))
+        ? await cache.match('/step11/offline.html')
+        : new Response('', { status: 499, statusText: 'network offline' });
       updateOnlineStatus(false);
     }
   }
