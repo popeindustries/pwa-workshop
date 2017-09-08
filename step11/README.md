@@ -1,17 +1,17 @@
-# Step 10
+# Step 11
 
-In addition to `ServiceWorker` and HTTPS, a `manifest.json` file is generally required to qualify for PWA status.
+Returning cached resources from a `ServiceWorker` will (almost) always lead to a significant performance improvement, with the added bonus of working seamlessly on or offline.
 
-Manifest files are an attempt to replace much of the meta data we currently add to the `<head>`. Things like icons, application titles, background colours, and behaviour when saved to and launched from the home screen can now be specified in a single file.
+In cases where an html request is not cached and the network is unavailable, the `ServiceWorker` can respond with a pre-cached fallback page, or even a dynamically rendered template.
 
 ---
 ---
 
 In this step, your task is to:
 
-1. **add a manifest file to the application**
+1. **return an offline page for html requests when offline**
 
-Add a `step10/manifest.json` file, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
+Edit the `step11/sw-index-v1.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 
 ---
 ---

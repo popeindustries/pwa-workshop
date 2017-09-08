@@ -4,7 +4,7 @@
  * Press the 'I' key to get more information on the current challenge.
  */
 
-const ID = 'step7';
+const ID = 'step9';
 const ASSETS = ['index.css', 'index.js'];
 
 self.addEventListener('install', event => {
@@ -16,7 +16,11 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(respond(event.request));
+  const url = new URL(event.request.url);
+
+  if (url.origin == location.origin) {
+    event.respondWith(respond(event.request));
+  }
 });
 
 async function installation() {
@@ -39,7 +43,7 @@ async function activation() {
 async function respond(request) {
   let response = await caches.match(request);
 
-  if (!response) {
+  if (!response || hasExpired(response)) {
     const cache = await caches.open(ID);
 
     response = await fetch(request);
@@ -49,4 +53,18 @@ async function respond(request) {
   }
 
   return response;
+}
+
+function hasExpired(response) {
+  const cacheControl = response.headers.get('Cache-Control');
+
+  if (!cacheControl) {
+    return false;
+  }
+
+  const date = response.headers.get('Date');
+  const maxAge = /max-age=(\d+)$/.exec(cacheControl);
+  const expires = +new Date(date) + (maxAge && maxAge[1] ? parseInt(maxAge[1], 10) * 1000 : 0);
+
+  return Date.now() > expires;
 }

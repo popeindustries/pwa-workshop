@@ -11,19 +11,34 @@ describe('Step 7 - Runtime caching', () => {
   });
 
   it('should return resources from cache', async () => {
-    cache.put(new Request(`/step7/foo.js`), new Response('', { status: 200 }));
+    cache.put(new Request(`/step7/bar.js`), new Response('', { status: 200 }));
+    await window.sleep(50);
 
-    const response = await fetch('foo.js');
+    const response = await fetch('/step7/bar.js');
 
     expect(response).to.have.property('status', 200);
   });
   it('should cache resources returned from network', async () => {
-    const response = await fetch('dummy.js');
-    const cached = await cache.match('/dummy.js');
+    const req = new Request('/step7/dummy.js');
+    const response = await fetch(req);
+    const responseText = await response.text();
+    const response2 = await fetch(req);
+    const response2Text = await response2.text();
+    const cached = await cache.match(req);
+    const cachedText = await cached.text();
 
     expect(response).to.have.property('status', 200);
     expect(cached).to.have.property('status', 200);
-    // console.log(response, cached)
+    expect(cachedText).to.equal(responseText);
+    expect(response2Text).to.equal(responseText);
+    expect(response).to.not.equal(response2);
   });
-  it('should not cache bad responses');
+  it('should not cache bad responses', async () => {
+    const req = new Request('/step7/foo.js');
+    const response = await fetch(req);
+    const response2 = await fetch(req);
+    const cached = await cache.match(req);
+
+    expect(cached).to.not.exist;
+  });
 });

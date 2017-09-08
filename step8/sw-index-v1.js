@@ -4,7 +4,7 @@
  * Press the 'I' key to get more information on the current challenge.
  */
 
-const ID = 'step6';
+const ID = 'step8';
 const ASSETS = ['index.css', 'index.js'];
 
 self.addEventListener('install', event => {
@@ -18,8 +18,8 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
-  if (/index\.[jc]ss?$/.test(url.pathname)) {
-    event.respondWith(caches.match(event.request));
+  if (url.origin == location.origin) {
+    event.respondWith(respond(event.request));
   }
 });
 
@@ -38,4 +38,19 @@ async function activation() {
       }
     })
   );
+}
+
+async function respond(request) {
+  let response = await caches.match(request);
+
+  if (!response) {
+    const cache = await caches.open(ID);
+
+    response = await fetch(request);
+    if (response.ok) {
+      cache.put(request, response.clone());
+    }
+  }
+
+  return response;
 }
