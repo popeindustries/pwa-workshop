@@ -22,7 +22,7 @@ self.addEventListener('fetch', event => {
 
 ### Runtime caching
 
-In addition to the static dependencies cached during the **installation** phase, the `ServiceWorker` is able to cache resources as they are returned from the network at runtime. It's important to note, however, that the `body` of a `response` object can only be read **once**. As a result, you must call `clone()` on the instance returned from `fetch` when caching a response:
+In addition to the static dependencies cached during the **installation** phase, the `ServiceWorker` is able to cache resources as they are returned from the network at runtime. It's important to note, however, that the `body` of a `response` object can only be read **once**. As a result, you should call `clone()` on the instance returned from `fetch` when caching a response:
 
 ```js
 cache.put(request, response.clone());
