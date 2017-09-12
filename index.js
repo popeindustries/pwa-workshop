@@ -11,9 +11,7 @@ const watcher = watch('.', {
   persistent: true
 });
 
-watcher.on('add', onUpdate);
 watcher.on('change', onUpdate);
-watcher.on('unlink', onUpdate);
 
 start(
   true,
