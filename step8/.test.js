@@ -18,4 +18,12 @@ describe('Step 8 - Routing', () => {
 
     expect(cached).to.not.exist;
   });
+  it('should only cache GET requests', async () => {
+    const request = new Request('http://localhost:3333/foo');
+    const response = await fetch(request, { method: 'post' });
+    const responseText = await response.text();
+    const cached = await cache.match(request);
+
+    expect(cached).to.not.exist;
+  });
 });

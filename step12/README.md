@@ -1,6 +1,6 @@
 # Step 12
 
-In addition to `ServiceWorker` and HTTPS, a [`manifest.json`](https://developer.mozilla.org/en-US/docs/Web/Manifest) file is generally required to qualify for authentic PWA status.
+At a minimum, in addition to `ServiceWorker` and HTTPS, a [`manifest.json`](https://developer.mozilla.org/en-US/docs/Web/Manifest) file is generally required to qualify for authentic *PWA* status.
 
 Manifest files are an attempt to replace much of the meta data we currently add to the `<head>`. Things like icons, application titles, background colours, and behaviour when saved to and launched from the home screen can now be specified in a single file.
 

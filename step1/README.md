@@ -1,6 +1,6 @@
 # Step 1
 
-The first step to a PWA is adding a `ServiceWorker`:
+Although *PWA* is a concept bigger than a single API, many of the new capabilities are only possible because of `ServiceWorker`:
 
 >A ***ServiceWorker*** is a script, installed via a web page, that runs in the background. It gives you the power to control **asset caching**, to handle requests from pages and workers when **offline**, and to respond to incoming **push notifications**.
 >

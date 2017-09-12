@@ -1,6 +1,6 @@
 # Step 8
 
-The `fetch` event will be triggered for *every* network request originating from a controlled page. As a result, it will likely be necessary to rely on some form of routing to determine how to handle different requests:
+The `fetch` event will be triggered for *every* network request originating from a controlled page. As a result, it will likely be necessary to rely on some form of **routing** to determine how to handle different requests:
 
 ```js
 self.addEventListener('fetch', event => {
@@ -10,7 +10,7 @@ self.addEventListener('fetch', event => {
     /* handle specific hosts */
   }
   if (/\.jpg$/.test(url.pathname)) {
-    /* handle images */
+    /* handle jpegs */
   }
   if (event.request.headers.get('accept').includes('text/html')) {
     /* handle html */
