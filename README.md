@@ -1,6 +1,6 @@
 # PWA-mazing!
 
-A 12-step program for transforming an unreliable and slow web site into a totally amazing *Progressive Web App*!
+A 12-step program for transforming an unreliable and slow web site into a totally amazing *Progressive Web App!*
 
 ## Getting started
 
