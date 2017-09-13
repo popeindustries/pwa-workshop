@@ -19,12 +19,19 @@ self.addEventListener('fetch', event => {
 });
 ```
 
+### Opaque responses
+
+When making cross-origin requests to resources without CORS headers, it won't be possible to read the contents or headers of the returned `response` (in addition, `status` will be `0`, and `ok` will be `false`). However, if you are certain you trust the source, you can still cache these so called *opaque* responses with `cache.put()`, though this *won't* work with `cache.add()` or `cache.addAll()`.
+
+Finally, remember to only cache `GET` requests.
+
 ---
 ---
 
 In this step, your task is to:
 
-- **only handle responses for same-origin resources**
+- **only handle responses for same or trusted origins (*.nrk.no)**
+- **cache all opaque responses from gfx-stage.nrk.no**
 
 Edit the `step8/sw-index-v1.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 
