@@ -9,7 +9,8 @@ In cases where an html request is not cached and the network is unavailable, the
 
 In this step, your task is to:
 
-1. **return an offline page for html requests when offline**
+- **return an offline page for html requests when offline**
+- **BONUS: return an offline fallback image for jpg requests when offline**
 
 Edit the `step11/sw-index-v1.js` file with your solution code, and press the `T` key to see if you're ready for the next challenge (pressing the `I` key will re-open this window).
 

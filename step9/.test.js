@@ -20,9 +20,7 @@ describe('Step 9 - Invalidation', () => {
       }
     });
 
-    cache.put(request, response);
-    await window.sleep(50);
-
+    await cache.put(request, response);
     const res = await fetch(request);
 
     expect(await res.json()).to.eql({ foo: false });
@@ -37,9 +35,7 @@ describe('Step 9 - Invalidation', () => {
       }
     });
 
-    cache.put(request, response);
-    await window.sleep(50);
-
+    await cache.put(request, response);
     const res = await fetch(request);
 
     expect(await res.json()).to.eql({ foo: true });
