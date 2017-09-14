@@ -10,8 +10,10 @@ const watcher = watch('.', {
   ignoreInitial: true,
   persistent: true
 });
+let restarting = false;
 
 watcher.on('change', onUpdate);
+watcher.on('add', onUpdate);
 
 start(
   true,
@@ -31,10 +33,16 @@ start(
 function onUpdate(path) {
   console.log('   + changed:', path);
 
-  restart(err => {
-    if (err) {
-      return console.log(err);
-    }
-    refresh('foo.js');
-  });
+  if (!restarting) {
+    restarting = true;
+    setTimeout(() => {
+      restart(err => {
+        if (err) {
+          return console.log(err);
+        }
+        refresh('foo.js');
+        restarting = false;
+      });
+    }, 20);
+  }
 }
